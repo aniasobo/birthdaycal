@@ -2,16 +2,15 @@ require 'birthday'
 
 class Calendar
 
-  attr_reader :name
-  attr_reader :birthday
+  attr_reader :list
 
   def initialize
-    @list = {}
+    @list = []
   end
 
   def add(name, date)
     birthday = Birthday.new(name, date)
-    @list << birthday
+    @list << birthday.return_as_ary
   end
 
   def read_calendar

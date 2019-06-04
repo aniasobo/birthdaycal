@@ -8,12 +8,12 @@ class Birthday
     @date = date
   end
 
-  def name
-    @name
+  def return_as_ary
+    ary = [@name, @date]
   end
 
-  def date
-    @date
-  end
+#  def return_date
+#    @date
+#  end
 
 end
