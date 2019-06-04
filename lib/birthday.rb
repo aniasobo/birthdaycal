@@ -1,3 +1,5 @@
+require 'timecop'
+
 class Birthday
 
   attr_reader :name
@@ -12,8 +14,8 @@ class Birthday
     [@name, @date]
   end
 
-#  def return_date
-#    @date
-#  end
+  def return_date
+    @date
+  end
 
 end

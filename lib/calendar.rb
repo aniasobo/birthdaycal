@@ -1,4 +1,5 @@
 require_relative 'birthday'
+require 'date'
 
 class Calendar
 
@@ -17,9 +18,14 @@ class Calendar
     line = []
 
     @list.each do |name, birthday|
-        line << "#{name}\'s birthday is: #{birthday}"
+      line << "#{name}\'s birthday is: #{birthday}"
     end
     line.join("\n")
+  end
+
+  def today_is
+    d = DateTime.now
+    d.to_s.scan(/[0-9]{4}-[0-9]{2}-[0-9]{2}/)[0]
   end
 
 end
