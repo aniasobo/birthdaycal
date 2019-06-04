@@ -9,7 +9,7 @@ class Birthday
   end
 
   def return_as_ary
-    ary = [@name, @date]
+    [@name, @date]
   end
 
 #  def return_date

@@ -16,4 +16,10 @@ RSpec.describe Calendar do
     expect(@cal.add("Dog", "02.02.02")).to eq [["Cat", "01.01.01"], ["Dog", "02.02.02"]]
   end
 
+  it 'displays existing entries each on new line' do
+    @cal.add("Cat", "01.01.01")
+    @cal.add("Dog", "02.02.02")
+    expect(@cal.read_calendar).to eq "Cat's birthday is: 01.01.01\nDog's birthday is: 02.02.02"
+  end
+
 end

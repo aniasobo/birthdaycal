@@ -1,4 +1,4 @@
-require 'birthday'
+require_relative 'birthday'
 
 class Calendar
 
@@ -14,9 +14,12 @@ class Calendar
   end
 
   def read_calendar
+    line = []
+
     @list.each do |name, birthday|
-      puts "#{name}\'s birthday is #{birthday}"
+        line << "#{name}\'s birthday is: #{birthday}"
     end
+    line.join("\n")
   end
 
 end
