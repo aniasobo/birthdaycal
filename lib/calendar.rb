@@ -23,9 +23,22 @@ class Calendar
     line.join("\n")
   end
 
+  # returns a string with current date to the born_today method
   def today_is
     d = DateTime.now
-    d.to_s.scan(/[0-9]{4}-[0-9]{2}-[0-9]{2}/)[0]
+    d.to_s.scan(/[0-9]{4}-[0-9]{2}-[0-9]{2}/)[0] # format: "2019-06-04" 
+  end  # .scan(/-[0-9]{2}-[0-9]{2}/)[0] for "-06-05"
+
+  def born_today
+    todays_date = Regexp.new(today_is)
+    birthdays = []
+
+    @list.each do |name, date|
+      if date.match?(todays_date)
+        birthdays << name
+      end
+    end
+    birthdays.join(' ')
   end
 
 end

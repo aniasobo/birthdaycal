@@ -7,6 +7,8 @@ Birthday Calendar is a program that you can load in IRB that allows you to:
 
 ### User manual:
 1. Initialize a new calendar 
-2. add name, date as arguments of the .add method
-3. view your full calendar with .read_calendar
+2. Add name, date as arguments of the .add method. Date must have format YYYY-MM-DD
+3. View your full calendar with .read_calendar
+
+  
 _Birthday Calendar is a Makers' TDD practical_
