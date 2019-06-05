@@ -23,10 +23,10 @@ RSpec.describe Calendar do
       @cal.add("Dog", "2002-02-02")
     end
   
-  it 'displays existing entries each on new line' do
-    expect(@cal.read_calendar).to eq "Cat's birthday is: 2001-01-01\nDog's birthday is: 2002-02-02"
+    it 'displays existing entries each on new line' do
+      expect(@cal.read_calendar).to eq "Cat's birthday is: 2001-01-01\nDog's birthday is: 2002-02-02"
+    end
   end
-end
 
   it 'returns current date' do
     today = DateTime.now
@@ -34,16 +34,19 @@ end
     expect(@cal.today_is).to eq today
   end
 
-  describe '#born_today' do
+  describe '#born_today and #birthday_info' do
     before(:each) do
+      @date = @cal.today_is
+      @cal.add("Birthday boy", @date)
       @cal.add("Cat", "2001-01-01")
     end
 
     it 'returns people whose birthday is today' do
-      date = @cal.today_is
-      @cal.add("Birthday boy", date)
-      expect(@cal.born_today).to eq "Birthday boy"
+      expect(@cal.born_today).to eq ["Birthday boy", @date]
+    end
+
+    it 'returns a message with the age of the person born today' do
+      expect(@cal.birthday_info).to eq "Birthday boy is 0 years old today."
     end
   end
-
 end
